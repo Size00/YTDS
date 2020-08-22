@@ -5,7 +5,7 @@ function youtubescrapper($ch_id){
     $doc = new DOMDocument();
     $doc->loadHTMLFile("http://www.youtube.com/channel/$ch_id/live");
     foreach($doc->getElementsByTagName('script') as $table){     
-	   echo $tables = $table->lastChild->textContent;
+	   echo $table->lastChild->textContent;
 	}
 }
  youtubescrapper('UCSJ4gkVC6NrvII8umztf0Ow');	 
