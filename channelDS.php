@@ -16,7 +16,10 @@ function youtubescrapper($ch_id){
 //['contents']['twoColumnWatchNextResults']['results']['results']['contents'][0]['videoPrimaryInfoRenderer']['viewCount']['videoViewCountRenderer']['viewCount']['simpleText'] // view count
 //['contents']['twoColumnWatchNextResults']['results']['results']['contents'][0]['videoPrimaryInfoRenderer']['dateText']['simpleText']// date published
 
-yt_data = window["ytInitialData"].contents.twoColumnWatchNextResults;
+yt_data_viewCount = window["ytInitialData"].contents.twoColumnWatchNextResults.results.results.contents[0].videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer.viewCount.runs[0].text;
+yt_data_title = window["ytInitialData"].contents.twoColumnWatchNextResults.results.results.contents[0].videoPrimaryInfoRenderer.title.runs[0].text;
+yt_latest_title = yt_data_title.replace(/[\u{0080}-\u{FFFF}]/gu,"");
+$('#idss' + yt_latest_title);
 
-console.log(yt_data);
+alert(yt_data_viewCount + " \n"  +  yt_latest_title);
 </script>
